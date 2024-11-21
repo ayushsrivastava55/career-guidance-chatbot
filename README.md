@@ -24,29 +24,10 @@ An AI-powered chatbot that helps students make informed decisions about their co
   - Hugging Face Transformers
 
 ## Setup Instructions
-
 ### Backend Setup
-
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-
-2. Create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Initialize the database:
-   ```bash
-   python -m flask --app app init-db
-   ```
+cd backend
+npm install
+npm start
 
 
 ### Frontend Setup
