@@ -19,8 +19,8 @@ An AI-powered chatbot that helps students make informed decisions about their co
   - Axios
 
 - **Backend:**
-  - Flask
-  - SQLAlchemy
+  - NodeJS
+  - MongoDB
   - Hugging Face Transformers
 
 ## Setup Instructions
@@ -48,10 +48,6 @@ An AI-powered chatbot that helps students make informed decisions about their co
    python -m flask --app app init-db
    ```
 
-5. Run the Flask application:
-   ```bash
-   python -m flask --app app run
-   ```
 
 ### Frontend Setup
 
