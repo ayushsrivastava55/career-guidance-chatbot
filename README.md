@@ -19,39 +19,16 @@ An AI-powered chatbot that helps students make informed decisions about their co
   - Axios
 
 - **Backend:**
-  - Flask
-  - SQLAlchemy
+  - NodeJS
+  - MongoDB
   - Hugging Face Transformers
 
 ## Setup Instructions
-
 ### Backend Setup
+cd backend
+npm install
+npm start
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-
-2. Create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Initialize the database:
-   ```bash
-   python -m flask --app app init-db
-   ```
-
-5. Run the Flask application:
-   ```bash
-   python -m flask --app app run
-   ```
 
 ### Frontend Setup
 
