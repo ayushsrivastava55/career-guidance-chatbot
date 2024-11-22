@@ -25,6 +25,13 @@ const colleges = [
     established: 1964,
     website: 'https://www.bits-pilani.ac.in'
   }
+  {
+    name: 'VIT Pune',
+    location: 'Pune, Maharashtra',
+    ranking: 59,
+    established: 1983,
+    website: 'https://www.vit.edu'
+  }
 ];
 
 const branches = [

@@ -23,6 +23,9 @@ app.use(express.json());
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // Connect to MongoDB
+console.log('Attempting to connect to MongoDB...');
+console.log('MongoDB URI:', process.env.MONGODB_URI ? 'URI is set' : 'URI is not set');
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/career-guidance', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -32,8 +35,24 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/career-gu
   keepAlive: true,
   keepAliveInitialDelay: 300000
 })
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error('MongoDB connection error:', err));
+.then(() => {
+  console.log('Successfully connected to MongoDB');
+  console.log('Database name:', mongoose.connection.name);
+  console.log('Connection state:', mongoose.connection.readyState);
+})
+.catch(err => {
+  console.error('MongoDB connection error details:', {
+    name: err.name,
+    message: err.message,
+    code: err.code,
+    stack: err.stack
+  });
+});
+
+// Monitor MongoDB connection
+mongoose.connection.on('connected', () => console.log('MongoDB connected event fired'));
+mongoose.connection.on('error', err => console.error('MongoDB error event:', err));
+mongoose.connection.on('disconnected', () => console.log('MongoDB disconnected event fired'));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
